@@ -1,0 +1,19 @@
+node_modules
+.pnpm-store
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Private career notes (never publish)
+notes/

@@ -1,0 +1,8 @@
+/* Tailwind entry. Design tokens and base styles are imported after it. */
+@import "tailwindcss";
+@import "./main.css";
+
+/* Fluid page container: fills the screen, capped at 1600px on very large monitors */
+.site-container {
+  @apply mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20;
+}
