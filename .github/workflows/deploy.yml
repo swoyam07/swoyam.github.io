@@ -27,11 +27,15 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - name: Work out the base URL
-        # <user>.github.io repo -> "/"   ·   any other repo -> "/<repo>/"
+      # Ask GitHub where the site is actually served:
+      #   repo "<owner>.github.io" or a custom domain -> base_path ""      -> "/"
+      #   any other repo name                         -> base_path "/repo" -> "/repo/"
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Set the base URL
         run: |
-          REPO="${GITHUB_REPOSITORY#*/}"
-          if [[ "$REPO" == *.github.io ]]; then BASE="/"; else BASE="/$REPO/"; fi
+          BASE="${{ steps.pages.outputs.base_path }}/"
           echo "NUXT_APP_BASE_URL=$BASE" >> "$GITHUB_ENV"
           echo "Base URL: $BASE"
 

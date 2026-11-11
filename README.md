@@ -87,7 +87,7 @@ public/          favicon, robots.txt, documents/, images/
 
 The workflow sets the base URL for you:
 
-- Repo named `<username>.github.io` → site at `https://<username>.github.io/`
+- Repo named exactly `<username>.github.io` → site at `https://<username>.github.io/`
 - Any other name, e.g. `portfolio` → site at `https://<username>.github.io/portfolio/`
 
 To test a project-repo build locally:
